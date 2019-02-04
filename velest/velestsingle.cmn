@@ -1,0 +1,107 @@
+******* CONTROL-FILE FOR PROGRAM  V E L E S T  (28-SEPT1993) *******
+***
+*** ( all lines starting with  *  are ignored! )
+*** ( where no filename is specified, 
+***   leave the line BLANK. Do NOT delete!)
+***
+*** next line contains a title (printed on output):
+CALAVERAS area7 1.10.93 EK startmodell vers. 1.1  
+***      starting model 1.1 based on Castillo and Ellsworth 1993, JGR
+***  olat       olon   icoordsystem      zshift   itrial ztrial    ised
+  37.1613     121.5478      0            0.000      0     0.00       0
+***
+*** neqs   nshot   rotate
+     053      0      0.0
+***
+*** isingle   iresolcalc
+       1          0
+***
+*** dmax    itopo    zmin     veladj    zadj   lowveloclay
+   1000.0     0     -0.20       0.20    5.00       0
+***
+*** nsp    swtfac   vpvs       nmod
+     1      0.50    1.730        2
+***
+***   othet   xythet    zthet    vthet   stathet
+      0.01    0.01      0.01     01.     0.01
+***
+*** nsinv   nshcor   nshfix     iuseelev    iusestacorr
+       0       0       0           1            1
+***
+*** iturbo    icnvout   istaout   ismpout
+       1         1         1         1
+***
+*** irayout   idrvout   ialeout   idspout   irflout   irfrout   iresout
+       0         0         0         0         0         0         0
+***
+*** delmin   ittmax   invertratio
+    0.010      99          0
+***
+*** Modelfile:
+ca1d11.mod
+***
+*** Stationfile:
+ca1vel.sta
+***
+*** Seismofile:
+                                                                                
+***
+*** File with region names:
+regionsnamen.dat  
+***
+*** File with region coordinates:
+regionskoord.dat 
+***
+*** File #1 with topo data:
+                                                                                
+***
+*** File #2 with topo data:
+                                                                                
+***
+*** DATA INPUT files:
+***
+*** File with Earthquake data:
+calarea7.cnv
+***
+*** File with Shot data:
+                                                                                
+***
+*** OUTPUT files:
+***
+*** Main print output file for simultaneous mode:
+
+***
+*** Main print output with single event locations:
+velsingleout.VEL
+***
+*** File with final hypocenters in *.cnv format:
+velsingleout.cnv
+***
+*** File with new station corrections:
+
+***
+*** File with summary cards (e.g. for plotting):
+
+***
+*** File with raypoints:
+
+***
+*** File with derivatives:
+
+***
+*** File with ALEs:
+
+***
+*** File with Dirichlet spreads:
+CALDIRSPRED.DIS
+***
+*** File with reflection points:
+
+***
+*** File with refraction points:
+
+***
+*** File with residuals:
+
+***
+******* END OF THE CONTROL-FILE FOR PROGRAM  V E L E S T  *******
