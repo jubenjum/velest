@@ -10807,52 +10807,30 @@ c
 c
 cek    end of matrinv.f
 c
-      subroutine CPUTIMER(cpusec)   ! Urs Kradolfer, 16.9.91
-c
-c     file: cputimer_unix.f
-c
-c     runs on:   HP-UX , UNIX System V (AT&T)
-c      and on:   SunOS , BSD UNIX
-c
-c     first call:       start counting of CPU-time
-c     subsequent calls: report elapsed CPU-time [sec] since first call
-c
-c     Call:   call CPUTIMER(cpusec)      where cpusec is a real variable
-c
-c
+
+      subroutine CPUTIMER(cpusec) ! Urs Kradolfer, 16.9.91
       implicit none
-      integer icpu, clock
-      real cpusec
-      external clock !$pragma C(clock)
-c
-      icpu=clock()
-      cpusec=float(icpu)/1000000.
-c
+      real cpusec, icpu
+      
+      call cpu_time(icpu)
+      cpusec=icpu
+      
       end ! of subroutine cputimer
-c
-      subroutine DATETIME(dattim)       ! Urs Kradolfer, 16.9.91
-c
-c     File:    datetime_sun.f
-c
-c     return UNIX-date and time
-c
-c     runs on: SunOS , BSD UNIX
-c
-c     Call:    call DATETIME(dattim) 
-c
-c     returned value: dattim  is a character*20
-c
+      
+      subroutine DATETIME(dattim) ! Urs Kradolfer, 16.9.91
+      
       implicit none
       character datum*26, dattim*20
-      integer it, itime, ctime, time
-      external ctime !$pragma C(ctime)
-      external sprintf !$pragma C(sprintf)
-      external time !$pragma C(time)
-c
-      it=time(itime)
-      it=ctime(itime)
-      call sprintf(datum,'%s',%val(it))
+      character ctime
+      integer(KIND=2) it
+      
+c external changed to intrinsic problem was solved on goo.gl/e1PcnK 
+
+      intrinsic ctime !$pragma C(ctime)
+      
+      it=time8()
+      datum=ctime(it)
       dattim=datum(5:24)
-c
+      
       end ! of subroutine datetime
-c
+
