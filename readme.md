@@ -16,4 +16,13 @@ on fedora
 	sudo yum install gcc-gfortran
 
 
+Compile
+-------
+
+Compile the code by running
+
+	make 
+
+The generated executable file is `bin/velest` 
+
 
